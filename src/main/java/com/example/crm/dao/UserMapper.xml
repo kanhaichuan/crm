@@ -3,13 +3,12 @@
 <mapper namespace="com.example.crm.dao.UserMapper">
   <resultMap id="BaseResultMap" type="com.example.crm.model.User">
     <id column="id" jdbcType="VARCHAR" property="id" />
-    <result column="deptId" jdbcType="VARCHAR" property="deptId" />
     <result column="loginAct" jdbcType="VARCHAR" property="loginAct" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="loginPwd" jdbcType="VARCHAR" property="loginPwd" />
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="expireTime" jdbcType="CHAR" property="expireTime" />
-    <result column="lockStatus" jdbcType="CHAR" property="lockStatus" />
+    <result column="lockState" jdbcType="CHAR" property="lockStatus" />
     <result column="allowIps" jdbcType="VARCHAR" property="allowIps" />
     <result column="createBy" jdbcType="VARCHAR" property="createBy" />
     <result column="createTime" jdbcType="CHAR" property="createTime" />
@@ -75,7 +74,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, deptId, loginAct, name, loginPwd, email, expireTime, lockStatus, allowIps, createBy, 
+    id,  loginAct, name, loginPwd, email, expireTime, lockState, allowIps, createBy,
     createTime, editBy, editTime
   </sql>
 

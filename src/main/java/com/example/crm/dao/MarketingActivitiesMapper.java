@@ -3,6 +3,8 @@ package com.example.crm.dao;
 import com.example.crm.model.MarketingActivities;
 import com.example.crm.model.MarketingActivitiesExample;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface MarketingActivitiesMapper {
@@ -27,4 +29,8 @@ public interface MarketingActivitiesMapper {
     int updateByPrimaryKeySelective(MarketingActivities record);
 
     int updateByPrimaryKey(MarketingActivities record);
+
+    Integer selectTotal();
+
+    List selectActivityByPage(Map map);
 }

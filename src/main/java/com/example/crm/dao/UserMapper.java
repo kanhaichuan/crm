@@ -28,5 +28,5 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-    User selectByLoginActAndLoginPwd();
+    User selectByLoginActAndLoginPwd(User user);
 }

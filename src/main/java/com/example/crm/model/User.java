@@ -3,8 +3,6 @@ package com.example.crm.model;
 public class User {
     private String id;
 
-    private String deptId;
-
     private String loginAct;
 
     private String name;
@@ -33,14 +31,6 @@ public class User {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getDeptId() {
-        return deptId;
-    }
-
-    public void setDeptId(String deptId) {
-        this.deptId = deptId;
     }
 
     public String getLoginAct() {

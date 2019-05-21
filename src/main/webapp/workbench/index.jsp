@@ -1,10 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="../jquery/bootstrap_3.3.0/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
-<script type="text/javascript" src="../jquery/jquery-1.11.1-min.js"></script>
-<script type="text/javascript" src="../jquery/bootstrap_3.3.0/js/bootstrap.min.js"></script>
+<link href="${servletContext.request.contextPath}/jquery/bootstrap_3.3.0/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="${servletContext.request.contextPath}/jquery/jquery-1.11.1-min.js"></script>
+<script type="text/javascript" src="${servletContext.request.contextPath}/jquery/bootstrap_3.3.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 
 	//页面加载完毕
@@ -32,7 +33,7 @@
 		});
 		
 		
-		window.open("main/index.html","workareaFrame");
+		window.open("main/index.jsp","workareaFrame");
 		
 	});
 	
@@ -162,7 +163,7 @@
 				<li class="liClass"><a href="javascript:void(0);" target="workareaFrame"><span class="glyphicon glyphicon-tag"></span> 动态</a></li>
 				<li class="liClass"><a href="javascript:void(0);" target="workareaFrame"><span class="glyphicon glyphicon-time"></span> 审批</a></li>
 				<li class="liClass"><a href="javascript:void(0);" target="workareaFrame"><span class="glyphicon glyphicon-user"></span> 客户公海</a></li>
-				<li class="liClass"><a href="activity/index.html" target="workareaFrame"><span class="glyphicon glyphicon-play-circle"></span> 市场活动</a></li>
+				<li class="liClass"><a href="activity/index" target="workareaFrame"><span class="glyphicon glyphicon-play-circle"></span> 市场活动</a></li>
 				<li class="liClass"><a href="clue/index.html" target="workareaFrame"><span class="glyphicon glyphicon-search"></span> 线索（潜在客户）</a></li>
 				<li class="liClass"><a href="customer/index.html" target="workareaFrame"><span class="glyphicon glyphicon-user"></span> 客户</a></li>
 				<li class="liClass"><a href="contacts/index.html" target="workareaFrame"><span class="glyphicon glyphicon-earphone"></span> 联系人</a></li>

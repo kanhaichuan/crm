@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,11 +27,18 @@ public class UserController {
     public Object login(User user){
         Map map = new HashMap();
         User user1 = userService.login(user);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        Date date = new Date();
+        String dateStr = sdf.format(date);
         if(null == user1){
-            map.put("msg",false);
+            map.put("msg","请输入正确的用户名和密码");
+        }else if(user1.getExpireTime().compareToIgnoreCase(dateStr) < 0){
+            map.put("msg","用户受限");
         }else{
             map.put("msg",true);
         }
+
         return map;
     }
 }
