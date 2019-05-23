@@ -5,6 +5,7 @@ import com.example.crm.dao.MarketingActivitiesMapper;
 import com.example.crm.model.MarketingActivities;
 import com.example.crm.service.MarketingActivitiesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,7 @@ import java.util.Map;
  * @date:2019/5/21
  * @author:felix
  */
+@Service
 public class MarketingActivitiesImpl implements MarketingActivitiesService {
 
     @Autowired

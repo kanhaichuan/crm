@@ -12,6 +12,11 @@
 <script type="text/javascript" src="jquery/jQuery.md5.js"></script>
 <script>
 	$(function(){
+		$(window).keydown(function (event) {
+			if(event.keyCode == 13){
+				$("#login").click();
+			}
+		})
 		$("#login").click(function(){
 			$.ajax({
 				url:"user/login",

@@ -89,7 +89,7 @@
     a.startDate,
     a.endDate
 
-    from tbl_activity a
+    from tbl_marketing_activities a
     join tbl_user u
     on a.owner=u.id
 
@@ -97,25 +97,25 @@
 
       <if test="name!=null and name!=''">
 
-        a.name like '%' #{name} '%'
+        a.name like '%' #{activity.name} '%'
 
       </if>
 
       <if test="owner!=null and owner!=''">
 
-        and u.name like '%' #{owner} '%'
+        and u.name like '%' #{activity.owner} '%'
 
       </if>
 
       <if test="startDate!=null and startDate!=''">
 
-        and a.startDate &gt; #{startDate}
+        and a.startDate &gt; #{activity.startDate}
 
       </if>
 
       <if test="endDate!=null and endDate!=''">
 
-        and a.endDate &lt; #{endDate}
+        and a.endDate &lt; #{activity.endDate}
 
       </if>
 

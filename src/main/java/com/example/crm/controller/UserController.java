@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -24,7 +25,7 @@ public class UserController {
 
     @RequestMapping("/user/login")
     @ResponseBody
-    public Object login(User user){
+    public Object login(User user, HttpSession session){
         Map map = new HashMap();
         User user1 = userService.login(user);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -36,6 +37,7 @@ public class UserController {
         }else if(user1.getExpireTime().compareToIgnoreCase(dateStr) < 0){
             map.put("msg","用户受限");
         }else{
+            session.setAttribute("user",user1);
             map.put("msg",true);
         }
 
